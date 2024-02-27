@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.stats-container {
+  background-color: green; /* Light background for the stats area */
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dotted #ccc; /* Dotted line for separation */
+}
+
+.stat-name {
+  text-transform: capitalize;
+  font-weight: bold;
+  color:black;
+}
+
+.stat-value {
+  font-weight: bold;
+  color:black;
+}
