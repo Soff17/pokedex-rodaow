@@ -9,10 +9,27 @@ export interface Pokemon{
             }
         }
     }
+    types:Type[];
+    stats:Stat[];
 }
 
 interface Ability{
     ability:{
+        name:string;
+        url:string;
+    }
+}
+
+interface Type{
+    type:{
+        name:string;
+        url:string;
+    }
+}
+
+interface Stat{
+    base_stat: number;
+    stat:{
         name:string;
         url:string;
     }
