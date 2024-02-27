@@ -3,7 +3,7 @@ import './App.css';
 import Button from './components/Button';
 import {Pokemon} from './models/Pokemon';
 import {PokeApi} from './api/PokeApi';
-import PokemonComponent from './components/card';
+import PokemonComponent from './components/pokemonComponent';
 function App() {
   const [pokemonNumber, setPokemonNumber] = React.useState<string|undefined>(undefined);
   const [pokemon,setPokemon]=React.useState<Pokemon|undefined>(undefined);
