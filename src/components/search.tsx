@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Button from './Button';
 import { Pokemon } from '../models/Pokemon';
 import { PokeApi } from '../api/PokeApi';
-import PokedexEntry from '../components/PokemonCard/PokemonCard';
-import StatsCard from '../components/StatsCard/StatsCard';
+import StatsCard from './StatsCard/StatsCard';
 import PokedexCard from './PokedexCard/PokedexCard';
+import ImagePokemon from '../elements/pngwing.com.png';
+import StatusCard from './StatusCard/StatusCard';
 
 interface NumericKeyboardProps {
   onKeyPress: (key: string) => void;
@@ -29,7 +30,7 @@ function NumericKeyboard() {
       .catch((error) => {
         console.log(error);
         setLoading(false);
-        setError("Pokemon no encontrado");
+        setError("POKEMON NO ENCONTRADO");
       });
   }
 
@@ -41,6 +42,7 @@ function NumericKeyboard() {
             setPokemonNumber(event.target.value);
             }}
             className="shadow border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder='Busca un Pokemon usando su numero de la Pokedex'
             type="text"
             value={pokemonNumber}
         />
@@ -50,11 +52,11 @@ function NumericKeyboard() {
             {loading && <p>Cargando...</p>}
             {!loading && pokemon && !error && (
             <>
-                <PokedexEntry pokemon={pokemon} isShiny={false} />
-                <StatsCard pokemon={pokemon} isShiny={true} />
+                <PokedexCard pokemon={pokemon} isShiny={false} />
+                <StatsCard pokemon={pokemon} isShiny={false} image={ImagePokemon}/>
             </>
             )}
-            {error && <p>{error}</p>}
+            {error && <StatusCard message={error} />}
         </div>
     </div>
   );
