@@ -15,7 +15,8 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh; 
+  overflow: hidden; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +24,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 
 .App-link {
   color: #61dafb;
@@ -38,7 +40,7 @@
 }
 
 .stats-container {
-  background-color: green; /* Light background for the stats area */
+  background-color: #2eb872; /* Light background for the stats area */
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
