@@ -2,12 +2,20 @@ import './button.css';
 
 interface ButtonProps{
     color?: string;
-    label:string;
+    label?:string;
+    imageUrl?: string; // Nueva prop para la URL de la imagen
     onClick:()=>void;
 }
 
 export default function Button(props:ButtonProps){
     return (
-        <button className={`btn ${!props.color?'btn-blue':''} ${props.color=='green'?'btn-green':''} ${props.color=='red'?'btn-red':''}`} onClick={props.onClick}>{props.label}</button>
+        <button 
+            className="rounded-full w-10 h-10"
+            onClick={props.onClick}  
+            style={{ backgroundImage: `url(${props.imageUrl})`, backgroundSize: 'cover' }} // Accediendo a imageUrl a través de props
+        >
+            {props.label}
+        </button>
     )
+
 }
